@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "@superfaceai/cli": "0.0.17",
-    "@superfaceai/one-sdk": "0.0.27"
+    "@superfaceai/one-sdk": "0.0.27",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {},
   "scripts": {

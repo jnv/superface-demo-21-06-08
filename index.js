@@ -1,9 +1,8 @@
-const {inspect} = require('util')
+require('dotenv').config()
 const { SuperfaceClient } = require('@superfaceai/one-sdk')
 const sdk = new SuperfaceClient()
 
-const MAIL_FROM = ''
-const MAIL_TO = ''
+const MAIL_TO = 'jan.vlnas@superface.ai'
 
 async function getRepos(repoProvider, username) {
   const profile = await sdk.getProfile('vcs/user-repos')
@@ -17,7 +16,7 @@ async function sendEmail(repos = []) {
   const text = JSON.stringify(repos, undefined, 2)
   const result = await profile
     .getUseCase('SendEmail')
-    .perform({from: MAIL_FROM, to: MAIL_TO, subject: 'Your requested repositories', text})
+    .perform({to: MAIL_TO, subject: 'Your requested repositories', text})
   console.log(result)
 }
 
