@@ -2,6 +2,9 @@ const {inspect} = require('util')
 const { SuperfaceClient } = require('@superfaceai/one-sdk')
 const sdk = new SuperfaceClient()
 
+const MAIL_FROM = ''
+const MAIL_TO = ''
+
 async function getRepos(repoProvider, username) {
   const profile = await sdk.getProfile('vcs/user-repos')
   const provider = await sdk.getProvider(repoProvider);
@@ -9,9 +12,19 @@ async function getRepos(repoProvider, username) {
   return result.value.repos
 }
 
+async function sendEmail(repos = []) {
+  const profile = await sdk.getProfile('communication/send-email')
+  const text = JSON.stringify(repos, undefined, 2)
+  const result = await profile
+    .getUseCase('SendEmail')
+    .perform({from: MAIL_FROM, to: MAIL_TO, subject: 'Your requested repositories', text})
+  console.log(result)
+}
+
 async function main(repoProvider, username) {
   const repos = await getRepos(repoProvider, username)
-  console.log(repos)
+  await sendEmail(repos)
+  // console.log(repos)
 }
 
 main(process.argv[2], process.argv[3])
