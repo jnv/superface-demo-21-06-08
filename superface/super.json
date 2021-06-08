@@ -3,13 +3,23 @@
     "vcs/user-repos": {
       "version": "1.0.1",
       "providers": {
-        "github": {}
+        "github": {},
+        "bitbucket": {}
       }
     }
   },
   "providers": {
     "github": {
       "security": []
+    },
+    "bitbucket": {
+      "security": [
+        {
+          "id": "basic",
+          "username": "$BITBUCKET_USERNAME",
+          "password": "$BITBUCKET_PASSWORD"
+        }
+      ]
     }
   }
 }
