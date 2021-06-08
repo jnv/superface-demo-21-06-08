@@ -8,9 +8,9 @@ async function getRepos(username) {
   return result.value.repos
 }
 
-async function main() {
-  const repos = await getRepos('superfaceai')
+async function main(username) {
+  const repos = await getRepos(username)
   console.log(repos)
 }
 
-main()
+main(process.argv[2])
