@@ -10,13 +10,11 @@
     "communication/send-email": {
       "version": "1.0.1",
       "providers": {
-        "mock": {},
         "sendgrid": {
           "defaults": {
             "SendEmail": {
               "input": {
-                "from": "hello@superface.org",
-                "domain": "$MAILGUN_COMMUNICATION_DOMAIN"
+                "from": "hello@superface.org"
               }
             }
           }
