@@ -14,5 +14,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SuperfaceClient = void 0;
 var one_sdk_1 = require("@superfaceai/one-sdk");
 var user_repos_1 = require("./types/vcs/user-repos");
-var typeDefinitions = __assign({}, user_repos_1.vcsUserRepos);
+var send_email_1 = require("./types/communication/send-email");
+var typeDefinitions = __assign(__assign({}, user_repos_1.vcsUserRepos), send_email_1.communicationSendEmail);
 exports.SuperfaceClient = one_sdk_1.createTypedClient(typeDefinitions);

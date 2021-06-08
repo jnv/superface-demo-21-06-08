@@ -6,6 +6,12 @@
         "github": {},
         "bitbucket": {}
       }
+    },
+    "communication/send-email": {
+      "version": "1.0.1",
+      "providers": {
+        "mock": {}
+      }
     }
   },
   "providers": {
@@ -20,6 +26,9 @@
           "password": "$BITBUCKET_PASSWORD"
         }
       ]
+    },
+    "mock": {
+      "security": []
     }
   }
 }
