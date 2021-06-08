@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@superfaceai/cli": "0.0.16",
+    "@superfaceai/cli": "0.0.17",
     "@superfaceai/one-sdk": "0.0.27"
   },
   "devDependencies": {},
