@@ -10,7 +10,8 @@
     "communication/send-email": {
       "version": "1.0.1",
       "providers": {
-        "mock": {}
+        "mock": {},
+        "sendgrid": {}
       }
     }
   },
@@ -29,6 +30,14 @@
     },
     "mock": {
       "security": []
+    },
+    "sendgrid": {
+      "security": [
+        {
+          "id": "bearer_token",
+          "token": "$SENDGRID_TOKEN"
+        }
+      ]
     }
   }
 }
